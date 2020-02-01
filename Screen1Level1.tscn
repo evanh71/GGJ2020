@@ -53,7 +53,7 @@ position = Vector2( -50, 0 )
 shape = SubResource( 3 )
 
 [node name="Long Horz Wall3" type="StaticBody2D" parent="."]
-position = Vector2( 920, 530 )
+position = Vector2( 910, 530 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -70,7 +70,8 @@ shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="Long Horz Wall4" type="StaticBody2D" parent="."]
-position = Vector2( 750, 440 )
+editor/display_folded = true
+position = Vector2( 730, 440 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -102,8 +103,73 @@ position = Vector2( 280, 460 )
 scale = Vector2( 1.9, 2.96667 )
 texture = ExtResource( 2 )
 
+[node name="Skinny Vert Wall3" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 940, 140 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skinny Vert Wall3"]
+position = Vector2( 280, 460 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Skinny Vert Wall3"]
+position = Vector2( 280, 460 )
+scale = Vector2( 1.9, 2.96667 )
+texture = ExtResource( 2 )
+
+[node name="Skinny Vert Wall5" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 940, -300 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skinny Vert Wall5"]
+position = Vector2( 280, 460 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Skinny Vert Wall5"]
+position = Vector2( 280, 460 )
+scale = Vector2( 1.9, 2.96667 )
+texture = ExtResource( 2 )
+
+[node name="Skinny Vert Wall4" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 770, -10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skinny Vert Wall4"]
+position = Vector2( 280, 460 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Skinny Vert Wall4"]
+position = Vector2( 280, 460 )
+scale = Vector2( 1.9, 2.96667 )
+texture = ExtResource( 2 )
+
+[node name="Skinny Vert Wall6" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 770, 430 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skinny Vert Wall6"]
+position = Vector2( 280, 460 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Skinny Vert Wall6"]
+position = Vector2( 280, 460 )
+scale = Vector2( 1.9, 2.96667 )
+texture = ExtResource( 2 )
+
 [node name="Block2" type="StaticBody2D" parent="."]
-position = Vector2( 890, 340 )
+editor/display_folded = true
+position = Vector2( 880, 160 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -119,7 +185,62 @@ shape = SubResource( 7 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Block2"]
 
+[node name="Block3" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 510, 350 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Block3"]
+position = Vector2( 0, 0.000305176 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block3"]
+position = Vector2( 0, 0.000305176 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Block3"]
+
+[node name="Block7" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 680, 220 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Block7"]
+position = Vector2( 0, 0.000305176 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block7"]
+position = Vector2( 0, 0.000305176 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Block7"]
+
+[node name="Block6" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 450, 350 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Block6"]
+position = Vector2( 0, 0.000305176 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block6"]
+position = Vector2( 0, 0.000305176 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Block6"]
+
 [node name="Block4" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 790, 760 )
 __meta__ = {
 "_edit_group_": true
@@ -135,6 +256,7 @@ position = Vector2( 0, 0.000305176 )
 shape = SubResource( 7 )
 
 [node name="Block5" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 970, 660 )
 __meta__ = {
 "_edit_group_": true
