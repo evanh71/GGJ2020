@@ -6,8 +6,8 @@ export var max_speed = 300
 export var acceleration = 75
 export var gravity = 40
 export var jump_force = -800
-export var legs = false
-export var ears = false
+export var legs = true
+export var ears = true
 export var eyes = true
 onready var initial_pos = get_global_position()
 

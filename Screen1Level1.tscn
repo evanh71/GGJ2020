@@ -30,7 +30,7 @@ extents = Vector2( 70, 80 )
 
 [node name="Long Horz Wall3" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 910, 530 )
+position = Vector2( 960, 520 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -48,7 +48,7 @@ one_way_collision = true
 
 [node name="Long Horz Wall4" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 730, 440 )
+position = Vector2( 879.25, 390 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -130,7 +130,7 @@ texture = ExtResource( 2 )
 
 [node name="Skinny Vert Wall6" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 770, 430 )
+position = Vector2( 770, 420 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -144,27 +144,27 @@ position = Vector2( 280, 460 )
 scale = Vector2( 1.9, 2.96667 )
 texture = ExtResource( 2 )
 
-[node name="Block2" type="StaticBody2D" parent="."]
+[node name="Block5" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 880, 160 )
+position = Vector2( 890, 190 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Block2"]
+[node name="Sprite" type="Sprite" parent="Block5"]
 position = Vector2( 0, 0.000305176 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block5"]
 position = Vector2( 0, 0.000305176 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Block2"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Block5"]
 
 [node name="Block3" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 510, 350 )
+position = Vector2( 670, 300 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -182,7 +182,7 @@ shape = SubResource( 3 )
 
 [node name="Block9" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 370, 720 )
+position = Vector2( 370, 690 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -200,7 +200,7 @@ shape = SubResource( 3 )
 
 [node name="Block10" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 590, 640 )
+position = Vector2( 590, 600 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -233,27 +233,9 @@ texture = ExtResource( 5 )
 position = Vector2( 77, 394 )
 shape = SubResource( 4 )
 
-[node name="Block7" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 680, 220 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Block7"]
-position = Vector2( 0, 0.000305176 )
-scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block7"]
-position = Vector2( 0, 0.000305176 )
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Block7"]
-
 [node name="Block6" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 450, 350 )
+position = Vector2( 610, 300 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -271,7 +253,7 @@ shape = SubResource( 3 )
 
 [node name="Block8" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 310, 720 )
+position = Vector2( 310, 690 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -289,7 +271,7 @@ shape = SubResource( 3 )
 
 [node name="Block11" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 530, 640 )
+position = Vector2( 530, 600 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -307,7 +289,7 @@ shape = SubResource( 3 )
 
 [node name="Block4" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 790, 760 )
+position = Vector2( 820.75, 690 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -318,21 +300,6 @@ scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Block4"]
-position = Vector2( 0, 0.000305176 )
-shape = SubResource( 3 )
-
-[node name="Block5" type="StaticBody2D" parent="."]
-position = Vector2( 970, 660 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Block5"]
-position = Vector2( 0, 0.000305176 )
-scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block5"]
 position = Vector2( 0, 0.000305176 )
 shape = SubResource( 3 )
 
@@ -634,16 +601,16 @@ shape = SubResource( 6 )
 [connection signal="body_entered" from="Spike10/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike3/Area2D" to="Spike3" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike3/Area2D" to="Player" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike15/Area2D" to="Spike15" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike15/Area2D" to="Player" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike8/Area2D" to="Spike8" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Spike15/Area2D" to="Spike15" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike8/Area2D" to="Player" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike11/Area2D" to="Spike11" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Spike8/Area2D" to="Spike8" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike11/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Spike11/Area2D" to="Spike11" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike5/Area2D" to="Spike5" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike5/Area2D" to="Player" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike13/Area2D" to="Spike13" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike13/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Spike13/Area2D" to="Spike13" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike6/Area2D" to="Spike6" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike6/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike12/Area2D" to="Spike12" method="_on_Area2D_body_entered"]
