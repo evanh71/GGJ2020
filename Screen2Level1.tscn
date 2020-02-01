@@ -3,8 +3,8 @@
 [ext_resource path="res://CollisionShape2D.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Player.gd" type="Script" id=3]
-[ext_resource path="res://Vertical.png" type="Texture" id=4]
-[ext_resource path="res://rectangle.png" type="Texture" id=5]
+[ext_resource path="res://rectangle.png" type="Texture" id=4]
+[ext_resource path="res://Vertical.png" type="Texture" id=5]
 [ext_resource path="res://square.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -66,7 +66,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Long Horz Wall3"]
 position = Vector2( 88, -8 )
 scale = Vector2( 4.90667, 0.96 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Long Horz Wall3"]
 shape = SubResource( 3 )
@@ -80,7 +80,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Long Horz Wall2"]
 position = Vector2( -504, 9.63713e-06 )
 scale = Vector2( 7.68, 0.96 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Long Horz Wall2"]
 position = Vector2( -384, -8 )
@@ -95,7 +95,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Long Vert Wall"]
 position = Vector2( -2.66721e-07, -67.9999 )
 scale = Vector2( 0.960001, 4.64 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Long Vert Wall"]
 position = Vector2( 0, -69.8061 )
@@ -110,7 +110,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Long Vert Wall3"]
 position = Vector2( -2.66721e-07, -67.9999 )
 scale = Vector2( 0.960001, 4.64 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Long Vert Wall3"]
 position = Vector2( 0, -69.8061 )
@@ -125,7 +125,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Long Vert Wall2"]
 position = Vector2( -9.4469e-07, 128 )
 scale = Vector2( 0.96, 2.24 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -147,7 +147,7 @@ shape = SubResource( 5 )
 [node name="Sprite" type="Sprite" parent="Staircase"]
 position = Vector2( 1084, 448 )
 scale = Vector2( 1.44, 2.24 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Staircase2" type="StaticBody2D" parent="."]
 position = Vector2( -336, 40 )
@@ -162,7 +162,7 @@ shape = SubResource( 5 )
 [node name="Sprite" type="Sprite" parent="Staircase2"]
 position = Vector2( 1084, 384 )
 scale = Vector2( 1.44, 1.38667 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Staircase3" type="StaticBody2D" parent="."]
 position = Vector2( -408, 168 )
@@ -177,7 +177,7 @@ shape = SubResource( 5 )
 [node name="Sprite" type="Sprite" parent="Staircase3"]
 position = Vector2( 1084, 320 )
 scale = Vector2( 1.44, 0.533333 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="square" type="Sprite" parent="."]
 position = Vector2( 24, 8 )
