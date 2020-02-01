@@ -9,6 +9,7 @@ export var jump_force = -800
 export var legs = true
 export var ears = true
 export var eyes = true
+onready var initial_pos = get_global_position()
 
 func _physics_process(delta):
 	# runs @ fps, check for presses and apply motion
@@ -40,3 +41,7 @@ func _physics_process(delta):
 		if friction == true:
 			motion.x = lerp(motion.x, 0, 0.1) # and in air
 	motion = move_and_slide(motion,UP)
+
+
+func _on_Area2D_body_entered(body):
+	set_global_position(initial_pos)
