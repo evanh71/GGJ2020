@@ -15,19 +15,22 @@ func _physics_process(delta):
 	if not legs:
 		max_speed = 200
 		jump_force = -600
-	if not ears:
-		print('oh god my ears')
 	var friction = false
 	motion.y += gravity
-	if Input.is_action_pressed('ui_right'):
+	if Input.is_action_pressed('ui_right') and ears:
 		motion.x = min(motion.x+acceleration,max_speed) # speed cap
-	elif Input.is_action_pressed('ui_left'):
+	elif Input.is_action_pressed('ui_left') and ears:
 		motion.x = max(motion.x-acceleration,-max_speed) # speed cap
+	# if ears are disabled, reverse the controls
+	elif Input.is_action_pressed('ui_right') and not ears:
+		motion.x = max(motion.x-acceleration,-max_speed)
+	elif Input.is_action_pressed('ui_left') and not ears:
+		motion.x = min(motion.x+acceleration,max_speed)
 	else:
 		friction = true
 	if Input.is_action_pressed('ui_accept'):
-		legs = false
-		print('legs set off')
+		ears = false
+		print('oh god my ears')
 	if is_on_floor():
 		if Input.is_action_just_pressed('ui_up'):
 			motion.y = jump_force
