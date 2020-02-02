@@ -95,8 +95,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="smoke" type="AnimatedSprite" parent="."]
-
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( -160, 560 )
 script = ExtResource( 4 )
