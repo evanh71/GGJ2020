@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rocket take off.wav-2ff2f32c22e70fd35db3b93928b529e5.sample"
+
+[deps]
+
+source_file="res://rocket take off.wav"
+dest_files=[ "res://.import/rocket take off.wav-2ff2f32c22e70fd35db3b93928b529e5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
