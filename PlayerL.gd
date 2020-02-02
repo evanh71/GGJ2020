@@ -72,7 +72,3 @@ func _on_Area2D_body_entered(body):
 	sound.get_node('death').play()
 	set_global_position(initial_pos)
 
-
-func _on_Area2D_area_entered(area):
-	pass # Replace with function body.
-

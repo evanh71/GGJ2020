@@ -6,16 +6,16 @@
 [ext_resource path="res://square.png" type="Texture" id=4]
 [ext_resource path="res://L2S2L.gd" type="Script" id=5]
 [ext_resource path="res://PlayerL.gd" type="Script" id=6]
-[ext_resource path="res://jump 4.png" type="Texture" id=7]
-[ext_resource path="res://idle 1.png" type="Texture" id=8]
-[ext_resource path="res://idle 2.png" type="Texture" id=9]
-[ext_resource path="res://frame 1 (1).png" type="Texture" id=10]
-[ext_resource path="res://frame 2 (1).png" type="Texture" id=11]
-[ext_resource path="res://frame 3 (1).png" type="Texture" id=12]
-[ext_resource path="res://frame 4 (1).png" type="Texture" id=13]
-[ext_resource path="res://jump 3.png" type="Texture" id=14]
-[ext_resource path="res://jump 2.png" type="Texture" id=15]
-[ext_resource path="res://jump 1.png" type="Texture" id=16]
+[ext_resource path="res://idle 1.png" type="Texture" id=7]
+[ext_resource path="res://idle 2.png" type="Texture" id=8]
+[ext_resource path="res://jump 2.png" type="Texture" id=9]
+[ext_resource path="res://jump 1.png" type="Texture" id=10]
+[ext_resource path="res://frame 1 (1).png" type="Texture" id=11]
+[ext_resource path="res://frame 2 (1).png" type="Texture" id=12]
+[ext_resource path="res://frame 3 (1).png" type="Texture" id=13]
+[ext_resource path="res://frame 4 (1).png" type="Texture" id=14]
+[ext_resource path="res://jump 4.png" type="Texture" id=15]
+[ext_resource path="res://jump 3.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 100, 10 )
@@ -34,34 +34,34 @@ extents = Vector2( 82.8837, 150.86 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "fallend",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "running",
-"speed": 7.0
-}, {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "fall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "jumpstart",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "running",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "fallend",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "fall",
 "speed": 5.0
 } ]
 
@@ -294,6 +294,21 @@ position = Vector2( 280, 460 )
 scale = Vector2( 1.9, 2.96667 )
 texture = ExtResource( 3 )
 
+[node name="Skinny Vert Wall11" type="StaticBody2D" parent="."]
+position = Vector2( -138.409, -672.165 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skinny Vert Wall11"]
+position = Vector2( 280, 460 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Skinny Vert Wall11"]
+position = Vector2( 280, 460 )
+scale = Vector2( 1.9, 2.96667 )
+texture = ExtResource( 3 )
+
 [node name="Skinny Vert Wall9" type="StaticBody2D" parent="."]
 position = Vector2( -330, 383.419 )
 __meta__ = {
@@ -519,7 +534,7 @@ position = Vector2( 0, 0.000305176 )
 shape = SubResource( 3 )
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2( 343.062, -72.0302 )
+position = Vector2( 931.224, -95.3816 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -533,7 +548,7 @@ scale = Vector2( 3.32667, 1.78 )
 texture = ExtResource( 2 )
 
 [node name="Floor2" type="StaticBody2D" parent="."]
-position = Vector2( 842.312, -71.4522 )
+position = Vector2( 842.312, -204.263 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -550,7 +565,7 @@ texture = ExtResource( 2 )
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 1273.45, 448.374 )
+position = Vector2( 1273.45, 449.568 )
 shape = SubResource( 5 )
 
 [node name="Player" type="KinematicBody2D" parent="."]

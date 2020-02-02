@@ -14,4 +14,4 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	get_tree().change_scene('res://L2S2L.tscn')
+	get_tree().change_scene('res://S2L2L.tscn')
