@@ -530,7 +530,7 @@ position = Vector2( 122, 671.21 )
 scale = Vector2( 0.446079, 0.446079 )
 frames = SubResource( 7 )
 animation = "New Anim"
-frame = 3
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true

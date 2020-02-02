@@ -708,7 +708,7 @@ texture = ExtResource( 3 )
 position = Vector2( 1115.53, 688.69 )
 scale = Vector2( 0.193045, 0.193045 )
 frames = SubResource( 7 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Player" type="KinematicBody2D" parent="."]
