@@ -1634,6 +1634,7 @@ position = Vector2( -316, 10 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 6 )
 animation = "New Anim"
+frame = 1
 playing = true
 
 [node name="Player" type="KinematicBody2D" parent="."]

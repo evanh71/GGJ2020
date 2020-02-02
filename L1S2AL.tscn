@@ -13,22 +13,22 @@
 [ext_resource path="res://hop 3.png" type="Texture" id=11]
 [ext_resource path="res://hop 4.png" type="Texture" id=12]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 456, 20 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24, 352 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 40, 200 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 120, 110 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 20, 72 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
@@ -87,7 +87,7 @@ scale = Vector2( 4.90667, 0.96 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Long Horz Wall3"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Long Horz Wall2" type="StaticBody2D" parent="."]
 position = Vector2( 832, 550 )
@@ -99,7 +99,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Long Horz Wall2"]
 position = Vector2( -622, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Long Vert Wall" type="StaticBody2D" parent="."]
 position = Vector2( 880, 296 )
@@ -114,7 +114,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Long Vert Wall"]
 position = Vector2( 0, -69.8061 )
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 
 [node name="Long Vert Wall4" type="StaticBody2D" parent="."]
 position = Vector2( 880, -400 )
@@ -129,7 +129,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Long Vert Wall4"]
 position = Vector2( 0, -69.8061 )
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 
 [node name="Long Vert Wall3" type="StaticBody2D" parent="."]
 position = Vector2( 712, -248 )
@@ -144,7 +144,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Long Vert Wall3"]
 position = Vector2( 0, -69.8061 )
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 
 [node name="Long Vert Wall2" type="StaticBody2D" parent="."]
 position = Vector2( 24, 24 )
@@ -162,7 +162,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Long Vert Wall2"]
 position = Vector2( 0, -56 )
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 
 [node name="Staircase" type="StaticBody2D" parent="."]
 position = Vector2( -264, -88 )
@@ -172,7 +172,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Staircase"]
 position = Vector2( 1088, 480 )
-shape = SubResource( 8 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Staircase"]
 position = Vector2( 1084, 448 )
@@ -187,7 +187,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Staircase2"]
 position = Vector2( 1088, 480 )
-shape = SubResource( 8 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Staircase2"]
 position = Vector2( 1084, 384 )
@@ -202,7 +202,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Staircase3"]
 position = Vector2( 1088, 480 )
-shape = SubResource( 8 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Staircase3"]
 position = Vector2( 1084, 320 )
@@ -227,7 +227,7 @@ script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -320, 410 )
-shape = SubResource( 9 )
+shape = SubResource( 4 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 340, 450 )
@@ -238,12 +238,12 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 0, -2 )
-shape = SubResource( 10 )
+shape = SubResource( 5 )
 
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 position = Vector2( 10, -2 )
 scale = Vector2( 0.731707, 0.711413 )
-frames = SubResource( 5 )
+frames = SubResource( 6 )
 animation = "fallend"
 playing = true
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
