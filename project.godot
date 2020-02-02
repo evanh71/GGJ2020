@@ -19,10 +19,6 @@ config/name="GGJ 2020 Alienated"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-sound="*res://sound.tscn"
-
 [display]
 
 window/size/width=1280
