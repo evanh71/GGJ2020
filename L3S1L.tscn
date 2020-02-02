@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Background 3.png" type="Texture" id=1]
 [ext_resource path="res://Vertical.png" type="Texture" id=2]
@@ -10,16 +10,12 @@
 [ext_resource path="res://peepers1.png" type="Texture" id=8]
 [ext_resource path="res://peepyasshole2.png" type="Texture" id=9]
 [ext_resource path="res://PlayerL.gd" type="Script" id=10]
-[ext_resource path="res://jump 4.png" type="Texture" id=11]
-[ext_resource path="res://idle 1.png" type="Texture" id=12]
-[ext_resource path="res://idle 2.png" type="Texture" id=13]
-[ext_resource path="res://frame 1 (1).png" type="Texture" id=14]
-[ext_resource path="res://frame 2 (1).png" type="Texture" id=15]
-[ext_resource path="res://frame 3 (1).png" type="Texture" id=16]
-[ext_resource path="res://frame 4 (1).png" type="Texture" id=17]
-[ext_resource path="res://jump 3.png" type="Texture" id=18]
-[ext_resource path="res://jump 2.png" type="Texture" id=19]
-[ext_resource path="res://jump 1.png" type="Texture" id=20]
+[ext_resource path="res://IDLE MISSING 1.png" type="Texture" id=11]
+[ext_resource path="res://IDLE MISSING 2.png" type="Texture" id=12]
+[ext_resource path="res://hop 2.png" type="Texture" id=13]
+[ext_resource path="res://hop 1.png" type="Texture" id=14]
+[ext_resource path="res://hop 3.png" type="Texture" id=15]
+[ext_resource path="res://hop 4.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50, 220 )
@@ -44,41 +40,41 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 20, 72 )
+
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "fallend",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
-"loop": true,
-"name": "running",
-"speed": 7.0
-}, {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
-"name": "fall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ) ],
+"frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 20 ) ],
+"frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "jumpstart",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "running",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "fallend",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
 } ]
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 20, 72 )
 
 [node name="World" type="Node2D"]
 
@@ -1647,16 +1643,16 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0, -2 )
+shape = SubResource( 7 )
+
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 position = Vector2( 10, -2 )
 scale = Vector2( 0.731707, 0.711413 )
-frames = SubResource( 7 )
+frames = SubResource( 8 )
 animation = "fallend"
 playing = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0, -2 )
-shape = SubResource( 8 )
 [connection signal="body_entered" from="Spike2/Area2D" to="Spike2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike9/Area2D" to="Spike9" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike4/Area2D" to="Spike4" method="_on_Area2D_body_entered"]
