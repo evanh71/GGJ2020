@@ -1,9 +1,31 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://kritter_theme.wav" type="AudioStream" id=1]
+[ext_resource path="res://sounds/kritter_theme.wav" type="AudioStream" id=1]
+[ext_resource path="res://sounds/landing_sound.wav" type="AudioStream" id=2]
+[ext_resource path="res://rocket take off.wav" type="AudioStream" id=3]
+[ext_resource path="res://sounds/death sound.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/Losing Part WIP.wav" type="AudioStream" id=5]
 
 [node name="World" type="Node2D"]
 
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 autoplay = true
+
+[node name="rocket_take_off" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="part_loss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="land" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="jump (UNFILLED)" type="AudioStreamPlayer" parent="."]
+
+[node name="dialogue (UNFILLED)" type="AudioStreamPlayer" parent="."]
+
+[node name="rumbling (UNFILLED)" type="AudioStreamPlayer" parent="."]
