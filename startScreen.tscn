@@ -7,13 +7,13 @@
 [ext_resource path="res://jump 4.png" type="Texture" id=5]
 [ext_resource path="res://idle 1.png" type="Texture" id=6]
 [ext_resource path="res://idle 2.png" type="Texture" id=7]
-[ext_resource path="res://jump 1.png" type="Texture" id=8]
-[ext_resource path="res://jump 2.png" type="Texture" id=9]
-[ext_resource path="res://frame 1 (1).png" type="Texture" id=10]
-[ext_resource path="res://frame 2 (1).png" type="Texture" id=11]
-[ext_resource path="res://frame 3 (1).png" type="Texture" id=12]
-[ext_resource path="res://frame 4 (1).png" type="Texture" id=13]
-[ext_resource path="res://jump 3.png" type="Texture" id=14]
+[ext_resource path="res://frame 1 (1).png" type="Texture" id=8]
+[ext_resource path="res://frame 2 (1).png" type="Texture" id=9]
+[ext_resource path="res://frame 3 (1).png" type="Texture" id=10]
+[ext_resource path="res://frame 4 (1).png" type="Texture" id=11]
+[ext_resource path="res://jump 3.png" type="Texture" id=12]
+[ext_resource path="res://jump 2.png" type="Texture" id=13]
+[ext_resource path="res://jump 1.png" type="Texture" id=14]
 [ext_resource path="res://rectangle.png" type="Texture" id=15]
 [ext_resource path="res://Vertical.png" type="Texture" id=16]
 [ext_resource path="res://warp1-1.gd" type="Script" id=17]
@@ -30,24 +30,24 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "jumpstart",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "running",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "jumpstart",
 "speed": 5.0
 } ]
 
@@ -63,7 +63,7 @@ extents = Vector2( 24, 170 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 40, 200 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 40, 60 )
 
 [node name="World" type="Node2D"]
@@ -196,5 +196,5 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_Area2D2_body_entered"]

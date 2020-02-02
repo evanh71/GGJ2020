@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://startbutton.gd" type="Script" id=1]
+[ext_resource path="res://credits.gd" type="Script" id=1]
+[ext_resource path="res://startbutton.gd" type="Script" id=2]
 
 [node name="World" type="Node2D"]
 
@@ -9,6 +10,7 @@ position = Vector2( -15.2381, 0 )
 scale = Vector2( 1.52381, 1.6 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 10, 0, 850, 0, 850, 450, 10, 450 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -44,5 +46,5 @@ margin_top = 337.5
 margin_right = 509.0
 margin_bottom = 357.5
 text = "Choose a new path?"
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 [connection signal="pressed" from="Polygon2D/Button" to="Polygon2D/Button" method="_on_Button_pressed"]

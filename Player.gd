@@ -35,6 +35,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed('ui_up'):
 			motion.y = jump_force
+			sound.get_node('jump').play(0.15)
 		if friction == true:
 			motion.x = lerp(motion.x, 0, 0.2) # initial speed, approaching 0, 20% decay
 	else:
@@ -44,7 +45,9 @@ func _physics_process(delta):
 	
 	# set animation
 	if motion.y == 0 and anim == 'fall':
-		anim = 'fallend'
+		if is_on_floor():
+			anim = 'fallend'
+			sound.get_node('land').play()
 	elif motion.y == 0 and anim == 'jump':
 			anim = 'fall'
 	elif motion.y > 0:
@@ -66,6 +69,7 @@ func _physics_process(delta):
 		set_global_position(initial_pos)
 
 func _on_Area2D_body_entered(body):
+	sound.get_node('death').play()
 	set_global_position(initial_pos)
 
 

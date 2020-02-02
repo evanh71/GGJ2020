@@ -36,6 +36,7 @@ func _input(event):
 			page = 0
 			set_bbcode(dialog[page])
 			set_visible_characters(0)
+			sound.get_node('part_loss').play()
 			
 		# if 2 is pressed during decision time, activate path 2
 		elif event.scancode == KEY_2 and decision_time:
