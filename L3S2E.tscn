@@ -8,7 +8,7 @@
 [ext_resource path="res://square.png" type="Texture" id=6]
 [ext_resource path="res://Area2D.gd" type="Script" id=7]
 [ext_resource path="res://Metero.png" type="Texture" id=8]
-[ext_resource path="res://Player.gd" type="Script" id=9]
+[ext_resource path="res://PlayerE.gd" type="Script" id=9]
 [ext_resource path="res://jump 4.png" type="Texture" id=10]
 [ext_resource path="res://idle 1.png" type="Texture" id=11]
 [ext_resource path="res://idle 2.png" type="Texture" id=12]

@@ -74,10 +74,6 @@ stream = ExtResource( 16 )
 stream = ExtResource( 17 )
 
 [node name="peeper 4" type="AudioStreamPlayer" parent="."]
-<<<<<<< HEAD
 stream = ExtResource( 18 )
 
 [node name="rumbling  1  (UNFILLED)" type="AudioStreamPlayer" parent="."]
-=======
-stream = ExtResource( 16 )
->>>>>>> 65e35a40819630a566fb6338c10214458a0e15ea

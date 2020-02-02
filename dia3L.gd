@@ -1,12 +1,14 @@
 extends RichTextLabel
 
-export var dialog = ['Hey! Hey you!', 'Hey hey hey, You have a leg to spare?', "I am kinda stuck down here...", 'Whaddya say?!','You should be fine without it. You only need one after all...','Hey, come on, help a buddy out!', '[ Press 1 to give him your leg, Press 2 to refuse. ]']
+export var dialog = ['I knew I would run into one of you, I just thought it would be sooner.','Usually your kind is crawling all over the place.','Gimme your eyes.', '[ Can I give you one? ]', 'No way! I want both!', 'I would never be caught dead walking around with one eye!', '[ Press 1 to give them your eyes, Press 2 to refuse. ]']
 var initial = dialog
-export var PATH1 = ['Hey hey, thanks!',"You're a real one.",'I really owe you!',"Let's meetup at the evacuation ship later."]
-export var PATH2 = ["Hey hey, don't feel bad.", 'Gotta do what you gotta do, right?', 'You better get going, someone else will come along for me!']
+export var PATH1 = ['Well, at least you are good for something...','Geez, you sure are quite the sore sight.',"You better hurry up and get going, there's no way I'll wait around for someone like you.", 'Really, what good is someone with no eyes?']
+export var PATH2 = ['WHAT?','WHAT KIND OF NERVE IS THAT?','IF I HAD ANY IDEA WHERE YOU WERE, I WOULD TAKE THEM MYSELF']
 var page = 0
 var decision_time = false
 var leave_time = false
+
+signal black
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_bbcode(dialog[page])
@@ -20,9 +22,9 @@ func _input(event):
 		# if the space bar is pressed, advance the text at the end of the message
 		if leave_time:
 			if dialog == PATH1:
-				get_tree().change_scene('res://L1L2AL.tscn')
+				get_tree().change_scene('res://credits.tscn')
 			else:
-				get_tree().change_scene('res://L1S2A.tscn')
+				get_tree().change_scene('res://L3S1AL.tscn')
 		if event.scancode == KEY_SPACE:
 			if get_visible_characters() > get_total_character_count():
 				if page < dialog.size()-1:
@@ -36,6 +38,7 @@ func _input(event):
 			page = 0
 			set_bbcode(dialog[page])
 			set_visible_characters(0)
+			emit_signal('black')
 			sound.get_node('part_loss').play()
 			
 		# if 2 is pressed during decision time, activate path 2
@@ -55,5 +58,3 @@ func _on_Timer_timeout():
 			decision_time = true
 		elif dialog == PATH1 or dialog == PATH2:
 				leave_time = true
-			
-				

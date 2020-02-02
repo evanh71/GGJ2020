@@ -6,11 +6,11 @@
 [ext_resource path="res://rectangle.png" type="Texture" id=4]
 [ext_resource path="res://Vertical.png" type="Texture" id=5]
 [ext_resource path="res://square.png" type="Texture" id=6]
-[ext_resource path="res://3-1warp.gd" type="Script" id=7]
+[ext_resource path="res://level3s1.gd" type="Script" id=7]
 [ext_resource path="res://GLOW1.png" type="Texture" id=8]
 [ext_resource path="res://GLOW2.png" type="Texture" id=9]
 [ext_resource path="res://GLOW3.png" type="Texture" id=10]
-[ext_resource path="res://Player.gd" type="Script" id=11]
+[ext_resource path="res://Player2L.gd" type="Script" id=11]
 [ext_resource path="res://jump 4.png" type="Texture" id=12]
 [ext_resource path="res://idle 1.png" type="Texture" id=13]
 [ext_resource path="res://idle 2.png" type="Texture" id=14]
@@ -40,7 +40,7 @@ extents = Vector2( 80, 20 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 105.762, 55.7595 )
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ) ],
 "loop": true,
@@ -48,7 +48,7 @@ animations = [ {
 "speed": 6.0
 } ]
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
@@ -81,7 +81,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 20, 72 )
 
 [node name="World" type="Node2D"]
@@ -707,7 +707,8 @@ texture = ExtResource( 3 )
 [node name="Glow" type="AnimatedSprite" parent="."]
 position = Vector2( 1115.53, 688.69 )
 scale = Vector2( 0.193045, 0.193045 )
-frames = SubResource( 9 )
+frames = SubResource( 7 )
+frame = 2
 playing = true
 
 [node name="Player2" type="KinematicBody2D" parent="."]
@@ -720,12 +721,12 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Player2"]
 position = Vector2( 10, -2 )
 scale = Vector2( 0.731707, 0.711413 )
-frames = SubResource( 10 )
+frames = SubResource( 8 )
 animation = "fallend"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
 position = Vector2( 0, -2 )
-shape = SubResource( 11 )
+shape = SubResource( 9 )
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_shape_entered" from="Spike3/Area2D" to="Spike3" method="_on_Area2D_body_shape_entered"]

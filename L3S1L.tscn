@@ -6,10 +6,10 @@
 [ext_resource path="res://Spike.gd" type="Script" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://warp3-2.gd" type="Script" id=6]
-[ext_resource path="res://warpdia3.gd" type="Script" id=7]
+[ext_resource path="res://L3S2L.gd" type="Script" id=7]
 [ext_resource path="res://peepers1.png" type="Texture" id=8]
 [ext_resource path="res://peepyasshole2.png" type="Texture" id=9]
-[ext_resource path="res://Player.gd" type="Script" id=10]
+[ext_resource path="res://PlayerL.gd" type="Script" id=10]
 [ext_resource path="res://jump 4.png" type="Texture" id=11]
 [ext_resource path="res://idle 1.png" type="Texture" id=12]
 [ext_resource path="res://idle 2.png" type="Texture" id=13]
@@ -33,10 +33,10 @@ extents = Vector2( 30, 30 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 90, 60.69 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 60, 90 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
@@ -44,7 +44,7 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
@@ -77,7 +77,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 20, 72 )
 
 [node name="World" type="Node2D"]
@@ -1631,12 +1631,12 @@ script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Critter/CollisionShape2D"]
 position = Vector2( -326, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="Sprite" type="AnimatedSprite" parent="Critter"]
 position = Vector2( -316, 10 )
 scale = Vector2( 0.25, 0.25 )
-frames = SubResource( 8 )
+frames = SubResource( 6 )
 animation = "New Anim"
 playing = true
 
@@ -1650,13 +1650,13 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 position = Vector2( 10, -2 )
 scale = Vector2( 0.731707, 0.711413 )
-frames = SubResource( 9 )
+frames = SubResource( 7 )
 animation = "fallend"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 0, -2 )
-shape = SubResource( 10 )
+shape = SubResource( 8 )
 [connection signal="body_entered" from="Spike2/Area2D" to="Spike2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike9/Area2D" to="Spike9" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike4/Area2D" to="Spike4" method="_on_Area2D_body_entered"]

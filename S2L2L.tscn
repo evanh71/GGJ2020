@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Background 2.png" type="Texture" id=1]
-[ext_resource path="res://warpdia2.gd" type="Script" id=2]
+[ext_resource path="res://dia2L.gd" type="Script" id=2]
 [ext_resource path="res://Tic1.png" type="Texture" id=3]
 [ext_resource path="res://Tic2.png" type="Texture" id=4]
 [ext_resource path="res://rectangle.png" type="Texture" id=5]
@@ -9,7 +9,7 @@
 [ext_resource path="res://Spike.gd" type="Script" id=7]
 [ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://warp3-1.gd" type="Script" id=9]
-[ext_resource path="res://Player.gd" type="Script" id=10]
+[ext_resource path="res://PlayerL.gd" type="Script" id=10]
 [ext_resource path="res://jump 4.png" type="Texture" id=11]
 [ext_resource path="res://idle 1.png" type="Texture" id=12]
 [ext_resource path="res://idle 2.png" type="Texture" id=13]
@@ -105,7 +105,6 @@ position = Vector2( 174, -120 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 2 )
 animation = "New Anim"
-frame = 1
 playing = true
 
 [node name="Long Horz Wall3" type="StaticBody2D" parent="."]
