@@ -9,4 +9,4 @@ func _ready():
 	pass
 
 func _on_CollisionShape2D_body_entered(body):
-	get_tree().change_scene('res://Dialogue.tscn')
+	get_tree().change_scene('res://Dialogue1.tscn')

@@ -7,16 +7,16 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 60, 60 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 20, 63.8301 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 20, 20 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 280, 20 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 20, 230 )
 
 [node name="World" type="Node2D"]
@@ -41,13 +41,13 @@ position = Vector2( 10, 100 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( 77, 394 )
-scale = Vector2( 0.265625, 1 )
+position = Vector2( 76.8357, 394.902 )
+scale = Vector2( 0.286584, 0.989525 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 77, 394 )
-shape = SubResource( 2 )
+position = Vector2( 76.713, 394.45 )
+shape = SubResource( 3 )
 
 [node name="Smol Wall" type="StaticBody2D" parent="."]
 position = Vector2( -20, 540 )
@@ -64,7 +64,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Smol Wall"]
 position = Vector2( 36, 40 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Smol Wall2" type="StaticBody2D" parent="."]
 position = Vector2( 290, 470 )
@@ -81,7 +81,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Smol Wall2"]
 position = Vector2( 36, 40 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Smol Wall3" type="StaticBody2D" parent="."]
 position = Vector2( 380, 420 )
@@ -98,7 +98,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Smol Wall3"]
 position = Vector2( 36, 40 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Long Horz Wall" type="StaticBody2D" parent="."]
 position = Vector2( 310, 580 )
@@ -114,7 +114,7 @@ scale = Vector2( 4.29688, 0.3125 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Long Horz Wall"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Long Horz Wall2" type="StaticBody2D" parent="."]
 position = Vector2( 870, 580 )
@@ -130,7 +130,7 @@ scale = Vector2( 4.29688, 0.3125 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Long Horz Wall2"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Long Vert Wall" type="StaticBody2D" parent="."]
 position = Vector2( 20, 330 )
@@ -146,6 +146,6 @@ scale = Vector2( 0.3125, 3.59375 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Long Vert Wall"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 [connection signal="area_entered" from="Critter/CollisionShape2D" to="Critter/CollisionShape2D" method="_on_CollisionShape2D_area_entered"]
 [connection signal="body_entered" from="Critter/CollisionShape2D" to="Critter/CollisionShape2D" method="_on_CollisionShape2D_body_entered"]

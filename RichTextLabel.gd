@@ -1,11 +1,12 @@
 extends RichTextLabel
 
-export var dialog = ['testing testing 1 2 3','my name is kaifin osu', 'stream duality by living suitcase', 'press 1 or 2 to view some paths']
+export var dialog = ['test dialog 1', 'test dialog 2', 'test dialog 3', 'test dialog 4', 'test dialog 5']
 var initial = dialog
-export var PATH1 = ['this is path 1', 'you have chose this path', 'foolish of you']
-export var PATH2 = ['this is path 2', 'what will you do', 'foolish of you']
+export var PATH1 = ['path 1','fuck','my','life']
+export var PATH2 = ['path 2']
 var page = 0
 var decision_time = false
+var leave_time = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_bbcode(dialog[page])
@@ -14,8 +15,14 @@ func _ready():
 	
 func _input(event):
 	# handles the input from the player
+	
 	if event is InputEventKey and event.pressed:
 		# if the space bar is pressed, advance the text at the end of the message
+		if leave_time:
+			if dialog == PATH1:
+				get_tree().change_scene('res://Screen2Level1afterleg.tscn')
+			else:
+				get_tree().change_scene('res://Screen2Level1after.tscn')
 		if event.scancode == KEY_SPACE:
 			if get_visible_characters() > get_total_character_count():
 				if page < dialog.size()-1:
@@ -42,6 +49,10 @@ func _input(event):
 func _on_Timer_timeout():
 	# every 0.05 seconds, display a new character
 	set_visible_characters(get_visible_characters()+1)
-	if get_visible_characters() > get_total_character_count():
-		if page == dialog.size()-1 and dialog == initial:
+	if get_visible_characters() > get_total_character_count() and page == dialog.size()-1 :
+		if dialog == initial:
 			decision_time = true
+		elif dialog == PATH1 or dialog == PATH2:
+				leave_time = true
+			
+				
