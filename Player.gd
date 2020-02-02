@@ -43,10 +43,18 @@ func _physics_process(delta):
 	motion = move_and_slide(motion,UP)
 	
 	# set animation
-	if abs(motion.x) < 20:
-		anim = 'idle'
-	else:
+	if motion.y == 0 and anim == 'fall':
+		anim = 'fallend'
+	elif motion.y == 0 and anim == 'jump':
+			anim = 'fall'
+	elif motion.y > 0:
+		anim = 'jump'
+	elif motion.y < 0 or motion.y == 0 and anim == 'jump':
+		anim = 'fall'
+	elif abs(motion.x) > 20:
 		anim = 'running'
+	else:
+		anim = 'idle'
 	if motion.x > 0:
 		sprite.set_flip_h(false)
 	elif motion.x < 0:
