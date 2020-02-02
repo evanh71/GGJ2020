@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ticdia2.wav-335ba3feacc47f55564f753b18ee22f6.sample"
+
+[deps]
+
+source_file="res://sounds/ticdia2.wav"
+dest_files=[ "res://.import/ticdia2.wav-335ba3feacc47f55564f753b18ee22f6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/blobdia2.wav-5ce43b55a8890089d45b417683b9a1b5.sample"
+
+[deps]
+
+source_file="res://sounds/blobdia2.wav"
+dest_files=[ "res://.import/blobdia2.wav-5ce43b55a8890089d45b417683b9a1b5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
