@@ -1,15 +1,18 @@
 extends KinematicBody2D
-# this script contols movement
+
+onready var sprite = get_node('Sprite')
+
 const UP = Vector2(0,-1)
 var motion = Vector2() # vector is direction + velocity
 export var max_speed = 300
 export var acceleration = 75
 export var gravity = 40
 export var jump_force = -800
-export var legs = false
+export var legs = true
 export var ears = true
 export var eyes = true
 onready var initial_pos = get_global_position()
+var anim = "idle"
 
 func _physics_process(delta):
 	# runs @ fps, check for presses and apply motion
@@ -38,7 +41,17 @@ func _physics_process(delta):
 		if friction == true:
 			motion.x = lerp(motion.x, 0, 0.1) # and in air
 	motion = move_and_slide(motion,UP)
-
+	
+	# set animation
+	if abs(motion.x) < 20:
+		anim = 'idle'
+	else:
+		anim = 'running'
+	if motion.x > 0:
+		sprite.set_flip_h(false)
+	elif motion.x < 0:
+		sprite.set_flip_h(true)
+	sprite.play(anim)
 
 func _on_Area2D_body_entered(body):
 	set_global_position(initial_pos)

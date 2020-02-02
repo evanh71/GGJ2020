@@ -1,12 +1,16 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Background 3.png" type="Texture" id=1]
 [ext_resource path="res://Vertical.png" type="Texture" id=2]
 [ext_resource path="res://square.png" type="Texture" id=3]
-[ext_resource path="res://Player.gd" type="Script" id=4]
+[ext_resource path="res://Spike.gd" type="Script" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
-[ext_resource path="res://Spike.gd" type="Script" id=6]
-[ext_resource path="res://warp3-2.gd" type="Script" id=7]
+[ext_resource path="res://warp3-2.gd" type="Script" id=6]
+[ext_resource path="res://Player.gd" type="Script" id=7]
+[ext_resource path="res://frame 1 (1).png" type="Texture" id=8]
+[ext_resource path="res://frame 2 (1).png" type="Texture" id=9]
+[ext_resource path="res://frame 3 (1).png" type="Texture" id=10]
+[ext_resource path="res://frame 4 (1).png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50, 220 )
@@ -15,13 +19,26 @@ extents = Vector2( 50, 220 )
 extents = Vector2( 30, 30 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 20, 63.8301 )
-
-[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 30, 30 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 90, 60.69 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "running",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 20, 72 )
 
 [node name="World" type="Node2D"]
 
@@ -651,23 +668,6 @@ position = Vector2( 0, 0.000305176 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Block30"]
-
-[node name="Player" type="KinematicBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 80, -460 )
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( 77, 394 )
-scale = Vector2( 0.265625, 1 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 77, 394 )
-shape = SubResource( 3 )
 
 [node name="Block6" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -1319,7 +1319,7 @@ shape = SubResource( 2 )
 
 [node name="Spike2" type="StaticBody2D" parent="."]
 position = Vector2( 130, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1327,7 +1327,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike2/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike2"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1336,7 +1336,7 @@ texture = ExtResource( 5 )
 
 [node name="Spike9" type="StaticBody2D" parent="."]
 position = Vector2( 550, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1344,7 +1344,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike9"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike9/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike9"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1353,7 +1353,7 @@ texture = ExtResource( 5 )
 
 [node name="Spike4" type="StaticBody2D" parent="."]
 position = Vector2( 250, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1361,7 +1361,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike4/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike4"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1370,7 +1370,7 @@ texture = ExtResource( 5 )
 
 [node name="Spike14" type="StaticBody2D" parent="."]
 position = Vector2( 670, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1378,7 +1378,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike14"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike14/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike14"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1387,7 +1387,7 @@ texture = ExtResource( 5 )
 
 [node name="Spike7" type="StaticBody2D" parent="."]
 position = Vector2( 430, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1395,7 +1395,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike7"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike7/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike7"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1404,7 +1404,7 @@ texture = ExtResource( 5 )
 
 [node name="Spike10" type="StaticBody2D" parent="."]
 position = Vector2( 850, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1412,7 +1412,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike10"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike10/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike10"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1421,7 +1421,7 @@ texture = ExtResource( 5 )
 
 [node name="Spike3" type="StaticBody2D" parent="."]
 position = Vector2( 190, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1429,7 +1429,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike3/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike3"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1438,7 +1438,7 @@ texture = ExtResource( 5 )
 
 [node name="Spike15" type="StaticBody2D" parent="."]
 position = Vector2( 610, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1446,7 +1446,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike15"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike15/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike15"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1455,7 +1455,7 @@ texture = ExtResource( 5 )
 
 [node name="Spike8" type="StaticBody2D" parent="."]
 position = Vector2( 370, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1463,7 +1463,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike8"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike8/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike8"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1472,7 +1472,7 @@ texture = ExtResource( 5 )
 
 [node name="Spike11" type="StaticBody2D" parent="."]
 position = Vector2( 790, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1480,7 +1480,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike11"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike11/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike11"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1489,7 +1489,7 @@ texture = ExtResource( 5 )
 
 [node name="Spike5" type="StaticBody2D" parent="."]
 position = Vector2( 310, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1497,7 +1497,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike5/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike5"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1506,7 +1506,7 @@ texture = ExtResource( 5 )
 
 [node name="Spike13" type="StaticBody2D" parent="."]
 position = Vector2( 730, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1514,7 +1514,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike13"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike13/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike13"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1523,7 +1523,7 @@ texture = ExtResource( 5 )
 
 [node name="Spike6" type="StaticBody2D" parent="."]
 position = Vector2( 490, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1531,7 +1531,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike6/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike6"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1540,7 +1540,7 @@ texture = ExtResource( 5 )
 
 [node name="Spike12" type="StaticBody2D" parent="."]
 position = Vector2( 910, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1548,7 +1548,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike12"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike12/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike12"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1558,7 +1558,7 @@ texture = ExtResource( 5 )
 [node name="Spike16" type="StaticBody2D" parent="."]
 editor/display_folded = true
 position = Vector2( 970, 830 )
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1566,7 +1566,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Spike16"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike16/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Spike16"]
 position = Vector2( 0.00012207, -0.000305176 )
@@ -1575,41 +1575,43 @@ texture = ExtResource( 5 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 1380, 580 )
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 5 )
-[connection signal="body_entered" from="Spike2/Area2D" to="Player" method="_on_Area2D_body_entered"]
+shape = SubResource( 4 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 120, -80 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( 10, -2 )
+scale = Vector2( 0.731707, 0.711413 )
+frames = SubResource( 5 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0, -2 )
+shape = SubResource( 6 )
 [connection signal="body_entered" from="Spike2/Area2D" to="Spike2" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike9/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike9/Area2D" to="Spike9" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike4/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike4/Area2D" to="Spike4" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike14/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike14/Area2D" to="Spike14" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike7/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike7/Area2D" to="Spike7" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike10/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike10/Area2D" to="Spike10" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike3/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike3/Area2D" to="Spike3" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike15/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike15/Area2D" to="Spike15" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike8/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike8/Area2D" to="Spike8" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike11/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike11/Area2D" to="Spike11" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike5/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike5/Area2D" to="Spike5" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike13/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike13/Area2D" to="Spike13" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike6/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike6/Area2D" to="Spike6" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike12/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike12/Area2D" to="Spike12" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Spike16/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike16/Area2D" to="Spike16" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
