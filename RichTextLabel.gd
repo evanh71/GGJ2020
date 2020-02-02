@@ -20,7 +20,7 @@ func _input(event):
 		# if the space bar is pressed, advance the text at the end of the message
 		if leave_time:
 			if dialog == PATH1:
-				get_tree().change_scene('res://L1L2AL.tscn')
+				get_tree().change_scene('res://L1S2AL.tscn')
 			else:
 				get_tree().change_scene('res://L1S2A.tscn')
 		if event.scancode == KEY_SPACE:
