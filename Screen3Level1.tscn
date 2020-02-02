@@ -521,7 +521,7 @@ position = Vector2( 132, 666 )
 scale = Vector2( 0.446079, 0.446079 )
 frames = SubResource( 9 )
 animation = "New Anim"
-frame = 2
+frame = 3
 playing = true
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spike/Area2D" to="Player" method="_on_Area2D_body_entered"]
