@@ -1,9 +1,9 @@
 extends RichTextLabel
 
-export var dialog = ['test dialog 1', 'test dialog 2', 'test dialog 3', 'test dialog 4', 'test dialog 5']
+export var dialog = ['Hey! Hey you!', 'Hey hey hey, You have a leg to spare?', "I am kinda stuck down here...", 'Whaddya say?!','You should be fine without it. You only need one after all...','Hey, come on, help a buddy out!', '[ Press 1 to give him your leg, Press 2 to refuse. ]']
 var initial = dialog
-export var PATH1 = ['path 1','fuck','my','life']
-export var PATH2 = ['path 2']
+export var PATH1 = ['Hey hey, thanks!',"You're a real one.",'I really owe you!',"Let's meetup at the evacuation ship later."]
+export var PATH2 = ["Hey hey, don't feel bad.", 'Gotta do what you gotta do, right?', 'You better get going, someone else will come along for me!']
 var page = 0
 var decision_time = false
 var leave_time = false
