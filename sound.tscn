@@ -1,10 +1,23 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://sounds/kritter_theme.wav" type="AudioStream" id=1]
 [ext_resource path="res://sounds/landing_sound.wav" type="AudioStream" id=2]
 [ext_resource path="res://rocket take off.wav" type="AudioStream" id=3]
 [ext_resource path="res://sounds/death sound.wav" type="AudioStream" id=4]
 [ext_resource path="res://sounds/Losing Part WIP.wav" type="AudioStream" id=5]
+[ext_resource path="res://sounds/ticdia2.wav" type="AudioStream" id=6]
+[ext_resource path="res://sounds/ticdia3.wav" type="AudioStream" id=7]
+[ext_resource path="res://sounds/jump sound.wav" type="AudioStream" id=8]
+[ext_resource path="res://sounds/blobdia1.wav" type="AudioStream" id=9]
+[ext_resource path="res://sounds/blobdia4.wav" type="AudioStream" id=10]
+[ext_resource path="res://sounds/blobdia3.wav" type="AudioStream" id=11]
+[ext_resource path="res://sounds/blobdia2.wav" type="AudioStream" id=12]
+[ext_resource path="res://sounds/ticdia1.wav" type="AudioStream" id=13]
+[ext_resource path="res://sounds/peepdia1.wav" type="AudioStream" id=14]
+[ext_resource path="res://sounds/peepdia2.wav" type="AudioStream" id=15]
+[ext_resource path="res://sounds/peepdia4.wav" type="AudioStream" id=16]
+[ext_resource path="res://sounds/ticdia4.wav" type="AudioStream" id=17]
+[ext_resource path="res://sounds/peepdia3.wav" type="AudioStream" id=18]
 
 [node name="World" type="Node2D"]
 
@@ -24,8 +37,43 @@ stream = ExtResource( 4 )
 [node name="land" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 
-[node name="jump (UNFILLED)" type="AudioStreamPlayer" parent="."]
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 
-[node name="dialogue (UNFILLED)" type="AudioStreamPlayer" parent="."]
+[node name="slimeball 1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 
-[node name="rumbling (UNFILLED)" type="AudioStreamPlayer" parent="."]
+[node name="slimeball 2 " type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="slimeball 3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="slimeball 4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="tick 1 " type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="tick 2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="tick 3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="tick 4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[node name="peeper 1  " type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="peeper 2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="peeper 3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+
+[node name="peeper 4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
+[node name="rumbling  1  (UNFILLED)" type="AudioStreamPlayer" parent="."]
