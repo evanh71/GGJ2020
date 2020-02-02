@@ -8,13 +8,13 @@
 [ext_resource path="res://idle 1.png" type="Texture" id=6]
 [ext_resource path="res://idle 2.png" type="Texture" id=7]
 [ext_resource path="res://jump 2.png" type="Texture" id=8]
-[ext_resource path="res://jump 1.png" type="Texture" id=9]
-[ext_resource path="res://frame 1 (1).png" type="Texture" id=10]
-[ext_resource path="res://frame 2 (1).png" type="Texture" id=11]
-[ext_resource path="res://frame 3 (1).png" type="Texture" id=12]
-[ext_resource path="res://frame 4 (1).png" type="Texture" id=13]
-[ext_resource path="res://jump 4.png" type="Texture" id=14]
-[ext_resource path="res://jump 3.png" type="Texture" id=15]
+[ext_resource path="res://frame 1 (1).png" type="Texture" id=9]
+[ext_resource path="res://frame 2 (1).png" type="Texture" id=10]
+[ext_resource path="res://frame 3 (1).png" type="Texture" id=11]
+[ext_resource path="res://frame 4 (1).png" type="Texture" id=12]
+[ext_resource path="res://jump 1.png" type="Texture" id=13]
+[ext_resource path="res://jump 3.png" type="Texture" id=14]
+[ext_resource path="res://jump 4.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 100, 10 )
@@ -22,10 +22,10 @@ extents = Vector2( 100, 10 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 50, 220 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 61.375, 80 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
@@ -37,28 +37,28 @@ animations = [ {
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "jumpstart",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "running",
 "speed": 7.0
 }, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "jumpstart",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
-"name": "fallend",
+"name": "fall",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ) ],
 "loop": true,
-"name": "fall",
+"name": "fallend",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 20, 72 )
 
 [node name="World" type="Node2D"]
@@ -763,7 +763,7 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 360, -70 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 668.25, 234.022 )
@@ -775,11 +775,11 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 position = Vector2( 10, -2 )
 scale = Vector2( 0.731707, 0.711413 )
-frames = SubResource( 5 )
+frames = SubResource( 4 )
 animation = "fallend"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 0, -2 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
