@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://kritter_theme.wav" type="AudioStream" id=1]
+
+[node name="World" type="Node2D"]
+
+[node name="Theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
