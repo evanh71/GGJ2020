@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://startbutton.gd" type="Script" id=1]
+
+[node name="World" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( -15.2381, 0 )
+scale = Vector2( 1.52381, 1.6 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 10, 0, 850, 0, 850, 450, 10, 450 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Polygon2D"]
+margin_left = 371.0
+margin_top = 144.0
+margin_right = 502.0
+margin_bottom = 294.0
+bbcode_enabled = true
+bbcode_text = "[center][u]Made with love[/u]
+
+Eric Halina
+
+Evan Higgs
+
+Justine Bendico
+
+Zoe Snyder"
+text = "Made with love
+
+Eric Halina
+
+Evan Higgs
+
+Justine Bendico
+
+Zoe Snyder"
+
+[node name="Button" type="Button" parent="Polygon2D"]
+margin_left = 371.0
+margin_top = 337.5
+margin_right = 509.0
+margin_bottom = 357.5
+text = "Choose a new path?"
+script = ExtResource( 1 )
+[connection signal="pressed" from="Polygon2D/Button" to="Polygon2D/Button" method="_on_Button_pressed"]

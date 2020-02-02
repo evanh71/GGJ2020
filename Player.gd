@@ -8,7 +8,7 @@ export var max_speed = 300
 export var acceleration = 75
 export var gravity = 40
 export var jump_force = -800
-export var legs = true
+export var legs = false
 export var ears = true
 export var eyes = true
 onready var initial_pos = get_global_position()
@@ -52,6 +52,14 @@ func _physics_process(delta):
 	elif motion.x < 0:
 		sprite.set_flip_h(true)
 	sprite.play(anim)
+	
+	# failsafe for falling
+	if get_global_position()[1] > 1000:
+		set_global_position(initial_pos)
 
 func _on_Area2D_body_entered(body):
 	set_global_position(initial_pos)
+
+
+func _on_Area2D_area_entered(area):
+	pass # Replace with function body.
