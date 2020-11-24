@@ -1,18 +1,28 @@
 extends KinematicBody2D
 
-onready var sprite = get_node('Sprite')
-
+onready var sprite = get_node('legs')
+var sprite_scale = Vector2(0.732, 0.711)
 const UP = Vector2(0,-1)
 var motion = Vector2() # vector is direction + velocity
 export var max_speed = 300
 export var acceleration = 75
 export var gravity = 40
 export var jump_force = -800
-export var legs = true
-export var ears = true
+onready var legs = sound.get_node('flags').get_legs()
+onready var ears = sound.get_node('flags').get_ears()
 export var eyes = true
 onready var initial_pos = get_global_position()
 var anim = "idle"
+
+func _ready():
+	if legs:
+		sprite = get_node('legs')
+	else:
+		sprite = get_node('legs')
+		sprite.visible = false
+		sprite = get_node('no_legs')
+		sprite.set_scale(sprite_scale)
+		
 
 func _physics_process(delta):
 	# runs @ fps, check for presses and apply motion
@@ -49,7 +59,7 @@ func _physics_process(delta):
 			anim = 'fallend'
 			sound.get_node('land').play()
 	elif motion.y == 0 and anim == 'jump':
-			anim = 'fall'
+		anim = 'fall'
 	elif motion.y > 0:
 		anim = 'jump'
 	elif motion.y < 0 or motion.y == 0 and anim == 'jump':

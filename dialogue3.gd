@@ -7,6 +7,9 @@ export var PATH2 = ['WHAT?','WHAT KIND OF NERVE IS THAT?','IF I HAD ANY IDEA WHE
 var page = 0
 var decision_time = false
 var leave_time = false
+var dia_noises = ['peeper 1  ', 'peeper 2', 'peeper 3', 'peeper 4']
+var dia_noise = dia_noises[0]
+var i = 0
 
 signal black
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +27,7 @@ func _input(event):
 			if dialog == PATH1:
 				get_tree().change_scene('res://credits.tscn')
 			else:
-				get_tree().change_scene('res://Screen1Level3after.tscn')
+				get_tree().change_scene('res://L3S1A.tscn')
 		if event.scancode == KEY_SPACE:
 			if get_visible_characters() > get_total_character_count():
 				if page < dialog.size()-1:
@@ -52,7 +55,13 @@ func _input(event):
 	
 func _on_Timer_timeout():
 	# every 0.05 seconds, display a new character
+	if get_visible_characters() < get_total_character_count() and not sound.get_node(dia_noise).is_playing():
+		sound.get_node(dia_noise).play()
 	set_visible_characters(get_visible_characters()+1)
+	if get_visible_characters() > get_total_character_count():
+		sound.get_node(dia_noise).stop()
+		i += 1
+		dia_noise = dia_noises[i%4]
 	if get_visible_characters() > get_total_character_count() and page == dialog.size()-1 :
 		if dialog == initial:
 			decision_time = true

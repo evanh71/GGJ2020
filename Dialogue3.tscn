@@ -29,7 +29,6 @@ __meta__ = {
 position = Vector2( 290, 360 )
 frames = SubResource( 1 )
 animation = "vibe"
-frame = 1
 playing = true
 
 [node name="Black" type="Polygon2D" parent="."]

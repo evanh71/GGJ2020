@@ -7,6 +7,9 @@ export var PATH2 = ["Hey hey, don't feel bad.", 'Gotta do what you gotta do, rig
 var page = 0
 var decision_time = false
 var leave_time = false
+var dia_noises = ['slimeball 1', 'slimeball 2 ', 'slimeball 3', 'slimeball 4']
+var dia_noise = dia_noises[0]
+var i = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_bbcode(dialog[page])
@@ -19,16 +22,17 @@ func _input(event):
 	if event is InputEventKey and event.pressed:
 		# if the space bar is pressed, advance the text at the end of the message
 		if leave_time:
-			if dialog == PATH1:
-				get_tree().change_scene('res://L1S2AL.tscn')
-			else:
-				get_tree().change_scene('res://L1S2A.tscn')
+			#if dialog == PATH1:
+				#get_tree().change_scene('res://L1S2AL.tscn')
+			#else:
+			get_tree().change_scene('res://L1S2A.tscn')
 		if event.scancode == KEY_SPACE:
 			if get_visible_characters() > get_total_character_count():
 				if page < dialog.size()-1:
 					page += 1
 					set_bbcode(dialog[page])
 					set_visible_characters(0)
+					#sound.get_node('slimeball 1').play()
 		# if 1 is pressed during decision time, activate path 1
 		elif event.scancode == KEY_1 and decision_time:
 			decision_time = false
@@ -37,6 +41,7 @@ func _input(event):
 			set_bbcode(dialog[page])
 			set_visible_characters(0)
 			sound.get_node('part_loss').play()
+			sound.get_node('flags').set_legs()
 			
 		# if 2 is pressed during decision time, activate path 2
 		elif event.scancode == KEY_2 and decision_time:
@@ -49,11 +54,17 @@ func _input(event):
 	
 func _on_Timer_timeout():
 	# every 0.05 seconds, display a new character
+	if get_visible_characters() < get_total_character_count() and not sound.get_node(dia_noise).is_playing():
+		sound.get_node(dia_noise).play()
 	set_visible_characters(get_visible_characters()+1)
+	if get_visible_characters() > get_total_character_count():
+		sound.get_node(dia_noise).stop()
+		i += 1
+		dia_noise = dia_noises[i%4]
 	if get_visible_characters() > get_total_character_count() and page == dialog.size()-1 :
 		if dialog == initial:
 			decision_time = true
 		elif dialog == PATH1 or dialog == PATH2:
-				leave_time = true
+			leave_time = true
 			
 				
