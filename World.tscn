@@ -17,4 +17,7 @@ margin_right = 1185.06
 margin_bottom = 594.735
 text = "Start"
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
